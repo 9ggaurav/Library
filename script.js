@@ -44,10 +44,95 @@ class Book {
   displayBook() {
     console.log(`book : ${this.book},
                 author : ${this.author},
-                pages : ${this.author},
+                pages : ${this.pages},
                 read? : ${this.readStatus}`);
   }
 }
+
+//default collection.
+const defaultBooks = [
+  {
+    title: "Animal Farm",
+    author: "George Orwell",
+    pages: 110,
+    completed: true,
+    genre: "Political Satire",
+  },
+  {
+    title: "The Republic",
+    author: "Plato",
+    pages: 500,
+    completed: false,
+    genre: "Philosophy",
+  },
+  {
+    title: "The God of Small Things",
+    author: "Arundhati Roy",
+    pages: 300,
+    completed: false,
+    genre: "Literary Fiction",
+  },
+  {
+    title: "Siddhartha",
+    author: "Hermann Hesse",
+    pages: 100,
+    completed: true,
+    genre: "Philosophical Fiction",
+  },
+  {
+    title: "The Eloquent JavaScript",
+    author: "Marijn Haverbeke",
+    pages: 500,
+    completed: true,
+    genre: "Programming",
+  },
+  {
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    pages: 281,
+    completed: true,
+    genre: "Classic Fiction",
+  },
+  {
+    title: "A Brief History of Time",
+    author: "Stephen Hawking",
+    pages: 212,
+    completed: false,
+    genre: "Science",
+  },
+  {
+    title: "Dune",
+    author: "Frank Herbert",
+    pages: 896,
+    completed: true,
+    genre: "Science Fiction",
+  },
+  {
+    title: "Pride and Prejudice",
+    author: "Jane Austen",
+    pages: 279,
+    completed: true,
+    genre: "Romance",
+  },
+  {
+    title: "Becoming",
+    author: "Michelle Obama",
+    pages: 448,
+    completed: false,
+    genre: "Biography",
+  },
+];
+
+for(let i=0; i<10; i++){
+  const newBook=new Book(defaultBooks[i].title, defaultBooks[i].author, defaultBooks[i].pages, defaultBooks[i].completed);
+  libraryCollection.push(newBook);
+}
+
+
+document.addEventListener("DOMContentLoaded", ()=>{
+  render();
+})
+
 
 function addBookToLibrary() {
   let newBook = new Book(
